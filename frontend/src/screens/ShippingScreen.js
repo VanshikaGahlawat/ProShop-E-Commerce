@@ -19,7 +19,7 @@ const ShippingScreen = ({history }) => {
     const submitHandler= (e) =>{
         e.preventDefault()
         dispatch(addShippingAddress({address, city, postalCode, country}))
-        history.pushState('/payment')
+        history.push('/payment')
     }
 
     return (
