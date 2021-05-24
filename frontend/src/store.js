@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 import {productList, productDetail} from './reducers/productListReducers'
 import {cart} from './reducers/cartReducers'
 import {userLogin, userRegister, userDetails, userUpdateProfile} from './reducers/userReducers'
+import {orderCreate, orderDetails, orderPay, orderListMy} from './reducers/orderReducers'
 
 const reducers = combineReducers({
     productList,
@@ -12,7 +13,11 @@ const reducers = combineReducers({
     userLogin,
     userRegister,
     userDetails,
-    userUpdateProfile
+    userUpdateProfile,
+    orderCreate,
+    orderDetails,
+    orderPay,
+    orderListMy
 })
 
 const cartItemsFromStorage= localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')) : []
