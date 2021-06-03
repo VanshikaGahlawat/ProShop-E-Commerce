@@ -67,7 +67,7 @@ const UserEditScreen = ({match, history}) => {
                     <Form.Control type='email' placeholder='Enter Email Address' value={email} onChange={ e => setEmail(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='isAdmin'>
-                    <Form.Control type='checkbox' label='Is Admin' checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}></Form.Control>
+                    <Form.Check type='checkbox' label='Is Admin' checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}></Form.Check>
                 </Form.Group>
                 
                 <Button type='submit' variant='primary'>Update</Button>
