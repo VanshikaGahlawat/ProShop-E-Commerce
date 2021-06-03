@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path')
 const dotenv = require('dotenv')
+const morgan = require('morgan')
 const connectDB = require("./config/db")
 const colors = require('colors')
 const productRoutes = require('./routes/productRoutes')
@@ -13,6 +14,10 @@ connectDB();
 
 const app= express();
 app.use(express.json())
+
+if(process.env.NODE_ENV === 'development'){
+    app.use(morgan('dev'))
+}
 
 const _dirname = path.resolve()
 app.use('/uploads', express.static(path.join(_dirname,'/uploads')))
